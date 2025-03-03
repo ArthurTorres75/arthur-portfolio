@@ -1,8 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { appWithTranslation, useTranslation } from "next-i18next";
+import Link from "next/link";
 import Loader from "@/app/components/Loader/Loader";
 
-export default function Home() {
+function Home() {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,8 +21,50 @@ export default function Home() {
   }
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      Hola soy Arthur
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-roboto)]">
+      <section className="text-center">
+        <h1 className="text-4xl font-bold mb-4">Hola, soy Arthur</h1>
+        <p className="text-lg">
+          Soy un Ingeniero en Informática dedicado al desarrollo web. Me
+          apasiona crear soluciones eficientes y elegantes para problemas
+          complejos.
+        </p>
+      </section>
+
+      <section className="w-full">
+        <h2 className="text-3xl font-bold mb-4 text-center">{t("projects")}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="border p-4 rounded shadow">
+            <h3 className="text-2xl font-bold mb-2">Proyecto 1</h3>
+            <p className="text-sm">Descripción breve del proyecto 1.</p>
+          </div>
+          <div className="border p-4 rounded shadow">
+            <h3 className="text-2xl font-bold mb-2">Proyecto 2</h3>
+            <p className="text-sm">Descripción breve del proyecto 2.</p>
+          </div>
+          <div className="border p-4 rounded shadow">
+            <h3 className="text-2xl font-bold mb-2">Proyecto 3</h3>
+            <p className="text-sm">Descripción breve del proyecto 3.</p>
+          </div>
+        </div>
+        <div className="text-center mt-8">
+          <Link href="/projects" passHref>
+            <span className="text-blue-500 hover:underline">
+              Ver más proyectos
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      <section className="text-center mt-8">
+        <Link href="/path/to/curriculum.pdf" passHref>
+          <span className="text-blue-500 hover:underline" onClick={() => {}}>
+            Descargar mi currículum
+          </span>
+        </Link>
+      </section>
     </div>
   );
 }
+
+export default appWithTranslation(Home);

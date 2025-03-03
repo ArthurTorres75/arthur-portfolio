@@ -17,14 +17,29 @@
     font-weight: bold;
     color: #2c39f2;
     position: relative;
-    animation: shine 5s infinite;
+    animation: shine 5s infinite,
+        fadeInOut 5s infinite, slideIn 2s ease-out forwards;
     background: linear-gradient(90deg, #3633ff, #fff, #3374ff);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-@keyframes fadeInOut {
+.loader-text-inverse {
+    font-size: 3rem;
+    font-family: 'Geist Sans', sans-serif;
+    font-weight: bold;
+    color: #2c39f2;
+    position: relative;
+    animation: shine 5s infinite,
+        fadeInOut 5s infinite, slideInInverse 2s ease-out forwards;
+    background: linear-gradient(90deg, #3633ff, #fff, #3374ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* @keyframes fadeInOut {
 
     0%,
     100% {
@@ -45,3 +60,15 @@
         background-position: -200% center;
     }
 }
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+} */
