@@ -1,6 +1,4 @@
 "use client";
-
-import { appWithTranslation } from "next-i18next";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./lib/i18n";
 import { AppProvider } from "./context/AppContext";
@@ -38,4 +36,4 @@ function RootLayout({
   );
 }
 
-export default appWithTranslation(RootLayout as any);
+export default RootLayout;
