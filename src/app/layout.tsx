@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
+import { useTranslation } from "next-i18next";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -24,6 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { t } = useTranslation("common");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -36,6 +38,11 @@ export default function RootLayout({
         className={`${roboto.variable} ${robotoMono.variable} antialiased bg-gradient-to-b from-blue-500 to-black min-h-screen text-white`}
       >
         <header className="flex flex-col sm:flex-row justify-between items-center p-4 bg-opacity-75 bg-black">
+          <title>{metadata.title as ReactNode}</title>
+          <meta name="description" content={metadata?.description || ""} />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="UTF-8" />
+          <link rel="icon" href="/favicon.ico" />
           <h1 className="text-2xl font-bold hover:text-blue-300 transition duration-300">
             Arthur
           </h1>
@@ -50,19 +57,19 @@ export default function RootLayout({
               href="#about"
               className="hover:text-blue-300 transition duration-300 transform hover:scale-110"
             >
-              Sobre mí
+              {t("about")}
             </a>
             <a
               href="#projects"
               className="hover:text-blue-300 transition duration-300 transform hover:scale-110"
             >
-              Proyectos
+              {t("projects")}
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="hover:text-blue-300 transition duration-300 transform hover:scale-110"
             >
-              Contáctame
+              {t("contact")}
             </a>
           </nav>
           <div className="hidden sm:flex space-x-4 mt-4 sm:mt-0">
@@ -98,7 +105,7 @@ export default function RootLayout({
                 Proyectos
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="hover:text-blue-300 transition duration-300"
                 onClick={toggleMenu}
               >
