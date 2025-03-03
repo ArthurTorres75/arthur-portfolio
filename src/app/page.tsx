@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { appWithTranslation, useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import Loader from "@/app/components/Loader/Loader";
 
@@ -67,4 +67,4 @@ function Home() {
   );
 }
 
-export default appWithTranslation(Home);
+export default Home;

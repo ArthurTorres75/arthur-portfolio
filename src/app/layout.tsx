@@ -1,5 +1,6 @@
 "use client";
 
+import { appWithTranslation } from "next-i18next";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./lib/i18n";
 import { AppProvider } from "./context/AppContext";
@@ -17,7 +18,7 @@ const robotoMono = Roboto_Mono({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
+function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -36,3 +37,5 @@ export default function RootLayout({
     </AppProvider>
   );
 }
+
+export default appWithTranslation(RootLayout as any);
