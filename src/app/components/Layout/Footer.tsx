@@ -8,7 +8,7 @@ export default function Footer() {
   const { hours, minutes, seconds } = useCurrentTime();
   const { t } = useTranslation();
   return (
-    <footer className="p-4 bg-opacity-75 bg-black text-center">
+    <footer className="p-4 bg-opacity-75 text-center">
       <p>
         &copy; {new Date().getFullYear()} {t("made-by")} {name}
       </p>

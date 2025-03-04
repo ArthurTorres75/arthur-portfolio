@@ -9,17 +9,18 @@
     justify-content: center;
     background-color: #fff;
     z-index: 9999;
+    animation: backgroundAnimation 5s infinite;
 }
 
 .loader-text {
     font-size: 3rem;
     font-family: 'Geist Sans', sans-serif;
     font-weight: bold;
-    color: #2c39f2;
+    color: #2272FF;
     position: relative;
     animation: shine 5s infinite,
         fadeInOut 5s infinite, slideIn 2s ease-out forwards;
-    background: linear-gradient(90deg, #3633ff, #fff, #3374ff);
+    background: linear-gradient(90deg, #2272ff, #fff, #2272ff);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -33,10 +34,24 @@
     position: relative;
     animation: shine 5s infinite,
         fadeInOut 5s infinite, slideInInverse 2s ease-out forwards;
-    background: linear-gradient(90deg, #3633ff, #fff, #3374ff);
+    background: linear-gradient(90deg, #2272ff, #fff, #2272ff);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #fff;
+    }
+
+    50% {
+        background-color: #2272FF;
+    }
+
+    100% {
+        background-color: #fff;
+    }
 }
 
 /* @keyframes fadeInOut {

@@ -25,7 +25,7 @@ function RootLayout({
     <AppProvider>
       <html lang="en">
         <body
-          className={`${roboto.variable} ${robotoMono.variable} antialiased bg-gradient-to-b from-blue-500 to-black min-h-screen text-white`}
+          className={`${roboto.variable} ${robotoMono.variable} antialiased bg-gradient-to-b from-[#2272FF] to-black min-h-screen text-white`}
         >
           <Header />
           <main className="flex-grow p-4 sm:p-8">{children}</main>

@@ -26,22 +26,20 @@ export const Header = () => {
 
   return (
     <>
-      <header className="flex flex-col sm:flex-row justify-between items-center p-4 bg-opacity-75 mx-10">
+      <header className="flex flex-col mt-6 sm:flex-row justify-between items-center p-4 bg-opacity-75 mx-10">
         <title>{metadata.title as ReactNode}</title>
         <meta name="description" content={metadata?.description || ""} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
         <link rel="icon" href="/favicon.ico" />
-        <h1 className="text-2xl font-bold hover:text-blue-300 transition duration-300 shining-text">
-          {name}
-        </h1>
+        <h1 className="text-xl font-bold shining-text">{name}</h1>
         <button
           className="sm:hidden text-2xl focus:outline-none"
           onClick={toggleMenu}
         >
           &#9776;
         </button>
-        <nav className="hidden sm:flex space-x-4 mt-4 sm:mt-0 sm: text-left loader-text-from-up">
+        <nav className="hidden sm:flex space-x-4 mt-4 sm:mt-0 sm: text-left text-lg loader-text-from-up">
           <Link href="/" passHref>
             <span className="hover:text-blue-300 transition duration-300 transform hover:scale-110">
               {t("about")}
@@ -60,7 +58,7 @@ export const Header = () => {
         </nav>
         <div className="hidden sm:flex space-x-4 mt-4 sm:mt-0">
           <button
-            className="hover:text-blue-300 transition duration-300"
+            className="hover:text-blue-300 cursor-pointer transition duration-300"
             onClick={() => {
               changeLanguage(currentLanguage === "en" ? "es" : "en");
             }}

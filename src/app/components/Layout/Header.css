@@ -5,8 +5,8 @@
 
 .shining-text {
     animation: shine 5s infinite;
-    background: linear-gradient(90deg, #3633ff, #fff, #3374ff);
-    background-size: 50% auto;
+    background: linear-gradient(90deg, #2272ff, #fff, #2272ff);
+    background-size: 40% auto;
     background-clip: initial;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

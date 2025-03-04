@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import Image from "next/image";
 import Loader from "@/app/components/Loader/Loader";
 
 function Home() {
@@ -22,13 +23,23 @@ function Home() {
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-roboto)]">
-      <section className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Hola, soy Arthur</h1>
-        <p className="text-lg">
-          Soy un Ingeniero en Informática dedicado al desarrollo web. Me
-          apasiona crear soluciones eficientes y elegantes para problemas
-          complejos.
-        </p>
+      <section className="flex xs:flex-col sm:flex-row text-left gap-4 mt-4">
+        <div className="rounded overflow-hidden shadow-lg">
+          <Image
+            src="https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ"
+            width={350}
+            height={350}
+            alt="Picture of the author"
+          />
+        </div>
+        <div className="">
+          <h1 className="text-4xl font-bold mb-4">Hola, soy Arthur</h1>
+          <p className="text-lg">
+            Soy un Ingeniero en Informática dedicado al desarrollo web. Me
+            apasiona crear soluciones eficientes y elegantes para problemas
+            complejos.
+          </p>
+        </div>
       </section>
 
       <section className="w-full">
